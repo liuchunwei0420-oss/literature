@@ -9,8 +9,8 @@ lang: zh-Hant-TW
 # 部署到 GitHub Pages 時要改這兩行：
 # - 如果 repo 名稱是「你的帳號.github.io」：baseurl 留空 ""
 # - 如果是一般 repo（例如 classics）：baseurl 填 "/classics"
-url: "https://your-account.github.io"
-baseurl: ""
+url: "https://liuchunwei0420-oss.github.io"
+baseurl: "/literature"
 
 # ============================================================
 # 內容集合（collections）
