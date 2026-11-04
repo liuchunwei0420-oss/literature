@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <rect width="400" height="300" fill="#FBEFE3"/>
+  <ellipse cx="200" cy="215" rx="190" ry="70" fill="#EBD6B8"/>
+  <!-- 蛇腳（畫蛇添足） -->
+  <g fill="#8CC47A" stroke="#3A2E28" stroke-width="2.5" stroke-linejoin="round">
+    <path d="M136 200 v26 q0 6 -6 6 h-4 q-6 0 -6 -5 q0 -4 6 -4 h2 v-23z"/>
+    <path d="M178 206 v24 q0 6 6 6 h4 q6 0 6 -5 q0 -4 -6 -4 h-2 v-21z"/>
+    <path d="M238 186 v26 q0 6 6 6 h4 q6 0 6 -5 q0 -4 -6 -4 h-2 v-23z"/>
+  </g>
+  <!-- 蛇身 -->
+  <path d="M100 196 C140 150 160 240 205 200 S270 160 300 196" fill="none" stroke="#3A2E28" stroke-width="30" stroke-linecap="round"/>
+  <path d="M100 196 C140 150 160 240 205 200 S270 160 300 196" fill="none" stroke="#8CC47A" stroke-width="24" stroke-linecap="round"/>
+  <path d="M120 183 C150 162 165 222 205 192 S262 165 290 186" fill="none" stroke="#B8DFA5" stroke-width="5" stroke-linecap="round" stroke-dasharray="10 12"/>
+  <path d="M296 196 Q322 204 330 190" fill="none" stroke="#3A2E28" stroke-width="13" stroke-linecap="round"/>
+  <path d="M296 196 Q322 204 330 190" fill="none" stroke="#8CC47A" stroke-width="8" stroke-linecap="round"/>
+  <!-- 頭 -->
+  <g stroke="#3A2E28" stroke-width="2.5">
+    <ellipse cx="86" cy="184" rx="30" ry="24" fill="#8CC47A"/>
+  </g>
+  <circle cx="76" cy="178" r="4" fill="#3A2E28"/><circle cx="96" cy="178" r="4" fill="#3A2E28"/>
+  <circle cx="77.5" cy="176.5" r="1.3" fill="#fff"/><circle cx="97.5" cy="176.5" r="1.3" fill="#fff"/>
+  <ellipse cx="70" cy="190" rx="5" ry="3" fill="#F4A9A0"/><ellipse cx="102" cy="190" rx="5" ry="3" fill="#F4A9A0"/>
+  <path d="M80 192 q6 5 12 0" fill="none" stroke="#3A2E28" stroke-width="2" stroke-linecap="round"/>
+  <path d="M60 196 l-14 4 m14 -4 l-12 10" stroke="#E0624A" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- 正在畫第四隻腳的毛筆 -->
+  <g transform="rotate(28 276 168)">
+    <rect x="270" y="90" width="12" height="80" rx="4" fill="#B5835A" stroke="#3A2E28" stroke-width="2.5"/>
+    <path d="M268 168 h16 l-4 24 q-4 6 -8 0z" fill="#3A2E28"/>
+  </g>
+  <path d="M282 206 l-4 18 h12" fill="none" stroke="#3A2E28" stroke-width="3" stroke-linecap="round" stroke-dasharray="4 5"/>
+  <!-- 被搶走的酒卮 -->
+  <g stroke="#3A2E28" stroke-width="2.5" stroke-linejoin="round">
+    <path d="M320 70 h44 l-4 46 q-18 8 -36 0z" fill="#D9A55B"/>
+    <ellipse cx="342" cy="70" rx="22" ry="6" fill="#F3D9A8"/>
+    <path d="M364 82 q14 4 6 20 q-4 6 -8 4" fill="none"/>
+  </g>
+  <path d="M326 94 h32" stroke="#B4823C" stroke-width="3"/>
+  <g fill="#7FB7E0" stroke="#3A2E28" stroke-width="1.8">
+    <path d="M306 52 q-6 10 0 14 q6 -4 0 -14z"/>
+    <path d="M292 72 q-5 8 0 11 q5 -3 0 -11z"/>
+  </g>
+  <g fill="none" stroke="#C8553D" stroke-width="3" stroke-linecap="round">
+    <path d="M378 50 l10 -8"/><path d="M382 64 l12 0"/>
+  </g>
+</svg>

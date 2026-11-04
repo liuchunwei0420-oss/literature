@@ -1,0 +1,231 @@
+# 典籍資料庫
+# 成語和之後的詩詞都可以共用這份書目。
+# 在內容檔的 source.book 填左邊的代號，頁面就會自動帶出書名、作者、年代。
+#
+# type: author 的條目代表「單篇作品」，頁面會顯示成「作者〈篇名〉」，
+# 例如 孟郊〈登科後〉；其他條目顯示成《書名·篇章》。
+
+# ---------- 經部 ----------
+zhouyi:
+  name: 周易
+  author: 不詳
+  era: 周代
+lunyu:
+  name: 論語
+  author: 孔子弟子及再傳弟子
+  era: 春秋末至戰國初
+mengzi:
+  name: 孟子
+  author: 孟子及其弟子
+  era: 戰國
+  note: 儒家經典，記錄孟子的言行與論辯。
+shijing:
+  name: 詩經
+  author: 不詳
+  era: 西周至春秋
+liji:
+  name: 禮記
+  author: 西漢 戴聖 編
+  era: 戰國至秦漢
+zuozhuan:
+  name: 左傳
+  author: 相傳為左丘明
+  era: 春秋
+
+# ---------- 子部 ----------
+laozi:
+  name: 老子
+  author: 老子
+  era: 春秋末
+zhuangzi:
+  name: 莊子
+  author: 莊周及其後學
+  era: 戰國
+  note: 道家經典，善用寓言講道理。
+liezi:
+  name: 列子
+  author: 舊題列禦寇
+  era: 成書年代有爭議，一般認為經魏晉人整理
+xunzi:
+  name: 荀子
+  author: 荀況
+  era: 戰國
+hanfeizi:
+  name: 韓非子
+  author: 韓非
+  era: 戰國
+  note: 法家代表著作，書中收了許多短小的寓言。
+sunzi:
+  name: 孫子兵法
+  author: 孫武
+  era: 春秋
+lvshi:
+  name: 呂氏春秋
+  author: 呂不韋門客
+  era: 戰國末
+huainanzi:
+  name: 淮南子
+  author: 劉安及門客
+  era: 西漢
+yanzi:
+  name: 晏子春秋
+  author: 後人託名晏嬰
+  era: 戰國
+xinxu:
+  name: 新序
+  author: 劉向
+  era: 西漢
+lienv:
+  name: 列女傳
+  author: 劉向
+  era: 西漢
+fengsu:
+  name: 風俗通義
+  author: 應劭
+  era: 東漢
+mouzi:
+  name: 牟子理惑論
+  author: 牟融
+  era: 東漢末
+  note: 收在南朝梁僧祐編的《弘明集》裡。
+shanhaijing:
+  name: 山海經
+  author: 不詳
+  era: 先秦至漢
+fahua:
+  name: 妙法蓮華經
+  author: 後秦 鳩摩羅什 譯
+  era: 後秦
+
+# ---------- 史部 ----------
+zhanguoce:
+  name: 戰國策
+  author: 西漢 劉向 編訂
+  era: 戰國
+  note: 記錄戰國時代謀士遊說各國的言論與故事。
+shiji:
+  name: 史記
+  author: 司馬遷
+  era: 西漢
+hanshu:
+  name: 漢書
+  author: 班固
+  era: 東漢
+houhanshu:
+  name: 後漢書
+  author: 范曄
+  era: 南朝宋
+sanguozhi:
+  name: 三國志
+  author: 陳壽 著、裴松之 注
+  era: 西晉（注：南朝宋）
+jinshu:
+  name: 晉書
+  author: 房玄齡等
+  era: 唐
+nanshi:
+  name: 南史
+  author: 李延壽
+  era: 唐
+beishi:
+  name: 北史
+  author: 李延壽
+  era: 唐
+xintangshu:
+  name: 新唐書
+  author: 歐陽脩、宋祁等
+  era: 北宋
+zizhi:
+  name: 資治通鑑
+  author: 司馬光
+  era: 北宋
+songshi:
+  name: 宋史
+  author: 脫脫等
+  era: 元
+fangyu:
+  name: 方輿勝覽
+  author: 祝穆
+  era: 南宋
+
+# ---------- 筆記、小說、藝術論 ----------
+shishuo:
+  name: 世說新語
+  author: 劉義慶
+  era: 南朝宋
+xijing:
+  name: 西京雜記
+  author: 舊題葛洪
+  era: 東晉
+benshishi:
+  name: 本事詩
+  author: 孟棨
+  era: 唐
+shuduan:
+  name: 書斷
+  author: 張懷瓘
+  era: 唐
+minghua:
+  name: 歷代名畫記
+  author: 張彥遠
+  era: 唐
+guotinglu:
+  name: 過庭錄
+  author: 范公偁
+  era: 南宋
+helin:
+  name: 鶴林玉露
+  author: 羅大經
+  era: 南宋
+
+# ---------- 單篇作品（顯示為 作者〈篇名〉） ----------
+taoyuanming:
+  type: author
+  name: 陶淵明
+  author: 陶淵明
+  era: 東晉
+shenjiji:
+  type: author
+  name: 沈既濟
+  author: 沈既濟
+  era: 唐
+ligongzuo:
+  type: author
+  name: 李公佐
+  author: 李公佐
+  era: 唐
+libai:
+  type: author
+  name: 李白
+  author: 李白
+  era: 唐
+mengjiao:
+  type: author
+  name: 孟郊
+  author: 孟郊
+  era: 唐
+hanyu:
+  type: author
+  name: 韓愈
+  author: 韓愈
+  era: 唐
+liuzongyuan:
+  type: author
+  name: 柳宗元
+  author: 柳宗元
+  era: 唐
+sushi:
+  type: author
+  name: 蘇軾
+  author: 蘇軾
+  era: 北宋
+wanganshi:
+  type: author
+  name: 王安石
+  author: 王安石
+  era: 北宋
+luyou:
+  type: author
+  name: 陸游
+  author: 陸游
+  era: 南宋

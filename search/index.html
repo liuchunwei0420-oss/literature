@@ -1,0 +1,13 @@
+---
+layout: default
+title: 搜尋
+---
+<section class="wrap search-page">
+  <header class="page-head">
+    <h1>搜尋</h1>
+    <p>可以打中文、拼音（不用打聲調）、注音，或拼音首字母（例如 szdt）。</p>
+  </header>
+  {% include search-box.html id="page" placeholder="想找哪個成語？" %}
+  <p class="search-status" data-search-status></p>
+  <div class="result-list" data-search-results></div>
+</section>

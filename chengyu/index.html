@@ -1,0 +1,26 @@
+---
+layout: default
+title: 成語
+scripts:
+  - /assets/js/filter.js
+---
+<section class="wrap list-page">
+  <header class="page-head">
+    <h1>成語故事館</h1>
+    <p>點一個分類，或直接往下逛。目前收錄 {{ site.idioms.size }} 則。想找特定成語，用上方的搜尋最快。</p>
+  </header>
+
+  {% assign all_tags = "" | split: "" %}
+  {% for d in site.idioms %}{% assign all_tags = all_tags | concat: d.tags %}{% endfor %}
+  {% assign all_tags = all_tags | uniq %}
+  <div class="filter-bar" data-filter-bar>
+    <button type="button" class="chip is-on" data-tag="">全部</button>
+    {% for t in all_tags %}<button type="button" class="chip" data-tag="{{ t }}">#{{ t }}</button>{% endfor %}
+  </div>
+
+  <p class="muted" data-filter-count></p>
+  <div class="card-grid" data-filter-grid>
+    {% for d in site.idioms %}{% include idiom-card.html idiom=d %}{% endfor %}
+  </div>
+  <p class="empty" data-filter-empty hidden>這個分類還沒有成語。</p>
+</section>

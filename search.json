@@ -1,0 +1,45 @@
+---
+layout: null
+permalink: /search.json
+---
+{%- comment -%}
+站內搜尋索引。會自動收錄 _data/sections.yml 裡 searchable: true 的分區。
+之後加入詩詞時，詩詞檔案只要有 title / author / dynasty 等欄位，也會一起進來。
+{%- endcomment -%}
+{%- assign n = 0 -%}
+[
+{%- for sec in site.data.sections -%}
+{%- if sec.searchable -%}
+{%- assign docs = site[sec.collection] -%}
+{%- for d in docs -%}
+{%- if n > 0 -%},{%- endif -%}
+{%- assign n = n | plus: 1 -%}
+{%- assign book = site.data.sources[d.source.book] -%}
+{%- assign tags = "" | split: "" -%}
+{%- if d.tags -%}{%- assign tags = tags | concat: d.tags -%}{%- endif -%}
+{%- assign rel = "" | split: "" -%}
+{%- if d.synonyms -%}{%- assign rel = rel | concat: d.synonyms -%}{%- endif -%}
+{%- if d.antonyms -%}{%- assign rel = rel | concat: d.antonyms -%}{%- endif -%}
+{%- if book.type == 'author' -%}
+{%- capture src -%}{{ book.name }}〈{{ d.source.chapter }}〉{%- endcapture -%}
+{%- else -%}
+{%- capture src -%}《{{ book.name | default: d.source.book }}{% if d.source.chapter != "" and d.source.chapter %}·{{ d.source.chapter }}{% endif %}》{%- endcapture -%}
+{%- endif -%}
+{
+  "section": {{ sec.label | jsonify }},
+  "title": {{ d.title | jsonify }},
+  "url": {{ d.url | relative_url | jsonify }},
+  "image": {{ d.illustration | relative_url | jsonify }},
+  "pinyin": {{ d.pinyin | default: "" | jsonify }},
+  "zhuyin": {{ d.zhuyin | default: "" | jsonify }},
+  "summary": {{ d.meaning | default: d.summary | default: "" | jsonify }},
+  "source": {{ src | strip | jsonify }},
+  "author": {{ d.author | default: "" | jsonify }},
+  "tags": {{ tags | jsonify }},
+  "related": {{ rel | jsonify }},
+  "text": {{ d.content | strip_html | strip_newlines | truncate: 400 | jsonify }}
+}
+{%- endfor -%}
+{%- endif -%}
+{%- endfor -%}
+]

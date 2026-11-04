@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <defs>
+    <pattern id="brick" width="40" height="24" patternUnits="userSpaceOnUse">
+      <rect width="40" height="24" fill="#C9A27C"/>
+      <path d="M0 12 H40 M0 24 H40 M20 0 V12 M0 12 V24 M40 12 V24" stroke="#A97F58" stroke-width="2"/>
+    </pattern>
+  </defs>
+  <rect width="400" height="300" fill="#DDEFF5"/>
+  <g fill="#fff"><ellipse cx="200" cy="40" rx="30" ry="11"/><ellipse cx="218" cy="32" rx="18" ry="11"/></g>
+  <path d="M190 22 l3 6 6 1 -5 4 1 6 -5 -3 -5 3 1 -6 -5 -4 6 -1z" fill="#F8C95A" transform="translate(-40 8) scale(.8)"/>
+  <!-- 井外的地面 -->
+  <rect x="0" y="86" width="400" height="214" fill="#B7D89E"/>
+  <rect x="0" y="86" width="400" height="10" fill="#9CC983"/>
+  <!-- 井身（剖面） -->
+  <rect x="140" y="86" width="120" height="214" fill="#6F8F9A"/>
+  <rect x="140" y="86" width="120" height="214" fill="#2E4650" opacity=".25"/>
+  <rect x="112" y="86" width="30" height="214" fill="url(#brick)" stroke="#3A2E28" stroke-width="2.5"/>
+  <rect x="258" y="86" width="30" height="214" fill="url(#brick)" stroke="#3A2E28" stroke-width="2.5"/>
+  <rect x="104" y="72" width="46" height="18" rx="6" fill="#B08A64" stroke="#3A2E28" stroke-width="2.5"/>
+  <rect x="250" y="72" width="46" height="18" rx="6" fill="#B08A64" stroke="#3A2E28" stroke-width="2.5"/>
+  <!-- 井口灑下的光 -->
+  <path d="M150 90 L250 90 L230 250 L170 250 Z" fill="#FFF7D6" opacity=".35"/>
+  <!-- 井底的水 -->
+  <path d="M142 262 q14 -6 29 0 t29 0 t29 0 t29 0 V300 H142Z" fill="#7FB7E0" stroke="#3A2E28" stroke-width="2"/>
+  <!-- 青蛙 -->
+  <g stroke="#3A2E28" stroke-width="2.5" stroke-linejoin="round">
+    <ellipse cx="200" cy="246" rx="32" ry="20" fill="#8CC47A"/>
+    <circle cx="184" cy="222" r="11" fill="#8CC47A"/>
+    <circle cx="216" cy="222" r="11" fill="#8CC47A"/>
+    <circle cx="184" cy="220" r="6" fill="#fff"/>
+    <circle cx="216" cy="220" r="6" fill="#fff"/>
+  </g>
+  <circle cx="184" cy="217" r="3.2" fill="#3A2E28"/><circle cx="216" cy="217" r="3.2" fill="#3A2E28"/>
+  <ellipse cx="180" cy="244" rx="5" ry="3" fill="#F4A9A0"/><ellipse cx="220" cy="244" rx="5" ry="3" fill="#F4A9A0"/>
+  <path d="M190 246 q10 7 20 0" fill="none" stroke="#3A2E28" stroke-width="2" stroke-linecap="round"/>
+  <text x="228" y="206" font-family="sans-serif" font-size="16" font-weight="700" fill="#3A2E28">♪</text>
+  <!-- 井外探頭的大鱉 -->
+  <g stroke="#3A2E28" stroke-width="2.5" stroke-linejoin="round">
+    <circle cx="300" cy="62" r="11" fill="#9BBF8A"/>
+    <path d="M300 74 Q330 34 370 62 Q376 76 300 74Z" fill="#6E9E73"/>
+    <path d="M310 70 Q336 48 362 66" fill="none" stroke="#4F7A55" stroke-width="2"/>
+  </g>
+  <circle cx="296" cy="61" r="2.4" fill="#3A2E28"/>
+  <path d="M292 67 q4 2 7 0" fill="none" stroke="#3A2E28" stroke-width="1.8" stroke-linecap="round"/>
+  <g fill="#fff" stroke="#3A2E28" stroke-width="2">
+    <path d="M318 14 h68 a10 10 0 0 1 10 10 v14 a10 10 0 0 1 -10 10 h-46 l-12 10 2 -10 h-12 a10 10 0 0 1 -10 -10 v-14 a10 10 0 0 1 10 -10z"/>
+  </g>
+  <path d="M324 34 q8 -8 16 0 t16 0 t16 0 t16 0" fill="none" stroke="#5B9BD0" stroke-width="3" stroke-linecap="round"/>
+</svg>

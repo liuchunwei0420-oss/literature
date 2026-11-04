@@ -1,0 +1,11 @@
+{% assign d = include.idiom %}
+<a class="card idiom-card" href="{{ d.url | relative_url }}" data-tags="{{ d.tags | join: ',' }}">
+  <div class="card-art">
+    {% if d.illustration %}<img src="{{ d.illustration | relative_url }}" alt="" loading="lazy">{% endif %}
+  </div>
+  <div class="card-body">
+    <h3 class="card-title">{{ d.title }}</h3>
+    <p class="card-pinyin">{{ d.pinyin }}</p>
+    <p class="card-meaning">{{ d.meaning }}</p>
+  </div>
+</a>

@@ -1,0 +1,46 @@
+---
+layout: default
+scripts:
+  - /assets/js/home.js
+---
+<section class="hero">
+  <div class="wrap hero-inner">
+    <div class="hero-copy">
+      <h1>一則成語，<br>藏著一段好故事。</h1>
+      <p>每個成語都從古書裡走出來。這裡用白話把故事說清楚，配上插圖，讓你一看就記得。</p>
+      {% include search-box.html id="hero" placeholder="試試：兔子、hu jia、ㄐㄧㄥˇ、szdt" %}
+    </div>
+    {% assign first = site.idioms | first %}
+    <a class="daily card" href="{{ first.url | relative_url }}" data-daily>
+      <span class="daily-label">今日成語</span>
+      <img src="{{ first.illustration | relative_url }}" alt="" data-daily-img>
+      <strong data-daily-title>{{ first.title }}</strong>
+      <small data-daily-meaning>{{ first.meaning }}</small>
+    </a>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="section-grid">
+    {% for sec in site.data.sections %}
+    <a class="card section-card {% if sec.status == 'soon' %}is-soon{% endif %}" href="{{ sec.url | relative_url }}">
+      <span class="section-icon" aria-hidden="true">{{ sec.icon }}</span>
+      <div>
+        <h2>{{ sec.label }}{% if sec.status == 'soon' %}<em class="soon">籌備中</em>{% endif %}</h2>
+        <p>{{ sec.intro }}</p>
+        {% if sec.status == 'live' %}<p class="muted">目前收錄 {{ site[sec.collection].size }} 則</p>{% endif %}
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="section-head">
+    <h2>成語故事館</h2>
+    <a href="{{ '/chengyu/' | relative_url }}">看全部 ›</a>
+  </div>
+  <div class="card-grid">
+    {% for d in site.idioms limit: 6 %}{% include idiom-card.html idiom=d %}{% endfor %}
+  </div>
+</section>

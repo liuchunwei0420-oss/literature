@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <rect width="400" height="300" fill="#E5F1F7"/>
+  <g fill="#fff"><ellipse cx="300" cy="50" rx="36" ry="13"/><ellipse cx="324" cy="40" rx="22" ry="14"/></g>
+  <path d="M0 170 Q200 150 400 168 V300 H0Z" fill="#C5E0A8"/>
+  <!-- 圈裡的羊 -->
+  <g stroke="#3A2E28" stroke-width="2.5" stroke-linejoin="round">
+    <path d="M70 150 a14 14 0 0 1 20 -14 a14 14 0 0 1 26 2 a14 14 0 0 1 18 18 a14 14 0 0 1 -8 24 h-48 a14 14 0 0 1 -8 -30z" fill="#fff"/>
+    <ellipse cx="66" cy="160" rx="14" ry="16" fill="#6F5F55"/>
+  </g>
+  <circle cx="61" cy="157" r="2.4" fill="#fff"/><circle cx="71" cy="157" r="2.4" fill="#fff"/>
+  <!-- 籬笆 -->
+  <g fill="#D8B48A" stroke="#3A2E28" stroke-width="2.5" stroke-linejoin="round">
+    <path d="M20 250 v-90 l12 -12 12 12 v90z"/>
+    <path d="M60 250 v-90 l12 -12 12 12 v90z"/>
+    <path d="M100 250 v-90 l12 -12 12 12 v90z"/>
+    <path d="M140 250 v-90 l12 -12 12 12 v90z"/>
+    <path d="M220 250 v-90 l12 -12 12 12 v90z"/>
+    <rect x="10" y="182" width="240" height="14" rx="4"/>
+    <rect x="10" y="218" width="240" height="14" rx="4"/>
+  </g>
+  <!-- 新補上的木板 -->
+  <g stroke="#3A2E28" stroke-width="2.5" stroke-linejoin="round">
+    <path d="M180 250 v-90 l12 -12 12 12 v90z" fill="#F6E1B8"/>
+  </g>
+  <g fill="#6F7A80"><circle cx="192" cy="189" r="2.5"/><circle cx="192" cy="225" r="2.5"/></g>
+  <g fill="#F8C95A"><path d="M168 172 l4 -10 m8 2 l6 -8" stroke="#E9B44C" stroke-width="3" stroke-linecap="round"/></g>
+  <!-- 拿槌子的人 -->
+  <g stroke="#3A2E28" stroke-width="2.5" stroke-linejoin="round">
+    <path d="M262 262 Q258 200 300 192 Q342 200 338 262 Z" fill="#D8806A"/>
+    <circle cx="300" cy="164" r="26" fill="#F6D7B8"/>
+    <path d="M274 156 q4 -26 26 -28 q24 2 28 26 q-14 -10 -28 -10 q-14 0 -26 12z" fill="#3A2E28"/>
+    <circle cx="300" cy="128" r="8" fill="#3A2E28"/>
+    <path d="M266 214 q-20 -10 -34 -26" fill="none" stroke-width="12" stroke-linecap="round"/>
+    <path d="M266 214 q-20 -10 -34 -26" fill="none" stroke="#D8806A" stroke-width="7" stroke-linecap="round"/>
+  </g>
+  <g transform="rotate(-35 228 184)" stroke="#3A2E28" stroke-width="2.5" stroke-linejoin="round">
+    <rect x="224" y="160" width="8" height="40" rx="3" fill="#9C6B43"/>
+    <rect x="214" y="150" width="28" height="14" rx="3" fill="#9AA6AD"/>
+  </g>
+  <circle cx="290" cy="168" r="2.8" fill="#3A2E28"/><circle cx="310" cy="168" r="2.8" fill="#3A2E28"/>
+  <ellipse cx="284" cy="177" rx="4" ry="2.5" fill="#F4A9A0"/><ellipse cx="316" cy="177" rx="4" ry="2.5" fill="#F4A9A0"/>
+  <path d="M294 180 q6 5 12 0" fill="none" stroke="#3A2E28" stroke-width="2" stroke-linecap="round"/>
+  <!-- 跑回來的小羊 -->
+  <g stroke="#3A2E28" stroke-width="2.5" stroke-linejoin="round">
+    <path d="M330 258 a11 11 0 0 1 15 -11 a11 11 0 0 1 20 2 a11 11 0 0 1 12 14 a11 11 0 0 1 -6 18 h-34 a11 11 0 0 1 -7 -23z" fill="#fff"/>
+    <ellipse cx="328" cy="262" rx="11" ry="12" fill="#6F5F55"/>
+    <path d="M342 280 v10 M366 280 v10" stroke-width="4" stroke-linecap="round"/>
+  </g>
+  <circle cx="324" cy="260" r="2" fill="#fff"/><circle cx="332" cy="260" r="2" fill="#fff"/>
+</svg>

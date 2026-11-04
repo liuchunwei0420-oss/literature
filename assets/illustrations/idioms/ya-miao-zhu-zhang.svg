@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <rect width="400" height="300" fill="#FFF4D9"/>
+  <circle cx="60" cy="56" r="26" fill="#F8C95A"/>
+  <g stroke="#F8C95A" stroke-width="4" stroke-linecap="round"><path d="M60 20 v-10 M60 92 v10 M96 56 h10 M24 56 h-10 M86 30 l7 -7 M34 30 l-7 -7 M86 82 l7 7 M34 82 l-7 7"/></g>
+  <path d="M0 196 Q200 180 400 196 V300 H0Z" fill="#C9A27C"/>
+  <g stroke="#B08A64" stroke-width="3" fill="none"><path d="M0 230 Q200 216 400 230"/><path d="M0 266 Q200 252 400 266"/></g>
+  <!-- 被拔高後枯掉的苗 -->
+  <g fill="none" stroke-width="4" stroke-linecap="round">
+    <path d="M40 228 v-46 q0 -10 -10 -4" stroke="#C6B15A"/>
+    <path d="M40 200 q12 -6 14 4" stroke="#C6B15A"/>
+    <path d="M90 226 v-50 q0 -10 12 -2" stroke="#C6B15A"/>
+    <path d="M90 196 q-12 -4 -14 6" stroke="#C6B15A"/>
+    <path d="M140 228 v-44 q0 -8 -10 -2" stroke="#C6B15A"/>
+  </g>
+  <g fill="#3A2E28" font-family="sans-serif" font-size="12"><text x="24" y="170">…</text><text x="98" y="164">…</text></g>
+  <!-- 還沒被拔的小苗 -->
+  <g stroke="#3A2E28" stroke-width="2" fill="#8CC47A">
+    <path d="M320 262 v-16 m0 4 q-12 -10 -16 -2 q6 6 16 2z m0 -4 q12 -10 16 -2 q-6 6 -16 2z"/>
+    <path d="M370 262 v-16 m0 4 q-12 -10 -16 -2 q6 6 16 2z m0 -4 q12 -10 16 -2 q-6 6 -16 2z"/>
+    <path d="M60 268 v-14 m0 4 q-10 -8 -14 -2 q5 5 14 2z m0 -4 q10 -8 14 -2 q-5 5 -14 2z"/>
+  </g>
+  <!-- 正在拔的苗 -->
+  <path d="M240 230 V140" stroke="#3A2E28" stroke-width="7" stroke-linecap="round"/>
+  <path d="M240 230 V140" stroke="#8CC47A" stroke-width="3.5" stroke-linecap="round"/>
+  <g stroke="#3A2E28" stroke-width="2" fill="#8CC47A">
+    <path d="M240 150 q-22 -18 -30 -4 q12 10 30 4z"/><path d="M240 150 q22 -18 30 -4 q-12 10 -30 4z"/>
+  </g>
+  <g stroke="#9C6B43" stroke-width="2.5" fill="none" stroke-linecap="round"><path d="M234 232 l-6 8 M240 232 v10 M246 232 l6 8"/></g>
+  <g stroke="#3A2E28" stroke-width="2.5" stroke-linecap="round"><path d="M220 200 h-10 M260 196 h10 M222 214 l-8 4"/></g>
+  <!-- 用力拔的農夫 -->
+  <g stroke="#3A2E28" stroke-width="2.5" stroke-linejoin="round">
+    <path d="M286 226 Q284 180 318 172 Q350 180 348 226 Z" fill="#7FA7C9"/>
+    <rect x="296" y="222" width="14" height="22" rx="6" fill="#5F7F9A"/>
+    <rect x="324" y="222" width="14" height="22" rx="6" fill="#5F7F9A"/>
+    <path d="M292 190 q-28 -4 -46 -30" fill="none" stroke-width="12" stroke-linecap="round"/>
+    <path d="M292 190 q-28 -4 -46 -30" fill="none" stroke="#7FA7C9" stroke-width="7" stroke-linecap="round"/>
+    <circle cx="245" cy="160" r="8" fill="#F6D7B8"/>
+    <circle cx="318" cy="142" r="26" fill="#F6D7B8"/>
+    <path d="M282 132 L318 102 L354 132 Q318 140 282 132Z" fill="#E3B860"/>
+  </g>
+  <g fill="none" stroke="#3A2E28" stroke-width="2.4" stroke-linecap="round">
+    <path d="M304 146 l6 3 -6 3"/><path d="M332 146 l-6 3 6 3"/>
+    <path d="M312 160 q6 -4 12 0"/>
+  </g>
+  <ellipse cx="302" cy="156" rx="4" ry="2.5" fill="#F4A9A0"/><ellipse cx="334" cy="156" rx="4" ry="2.5" fill="#F4A9A0"/>
+  <path d="M352 120 q6 8 0 12 q-6 -4 0 -12z" fill="#7FB7E0" stroke="#3A2E28" stroke-width="1.6"/>
+  <path d="M362 136 q5 6 0 9 q-5 -3 0 -9z" fill="#7FB7E0" stroke="#3A2E28" stroke-width="1.6"/>
+</svg>

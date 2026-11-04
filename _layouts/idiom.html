@@ -1,0 +1,91 @@
+---
+layout: default
+---
+{% assign book = site.data.sources[page.source.book] %}
+<article class="wrap idiom-page">
+  <nav class="crumbs" aria-label="麵包屑">
+    <a href="{{ '/' | relative_url }}">首頁</a> › <a href="{{ '/chengyu/' | relative_url }}">成語</a> › <span>{{ page.title }}</span>
+  </nav>
+
+  <header class="idiom-hero">
+    <div class="idiom-art">
+      {% if page.illustration %}<img src="{{ page.illustration | relative_url }}" alt="「{{ page.title }}」插圖">{% endif %}
+    </div>
+    <div class="idiom-head">
+      <h1 class="idiom-title">
+        {% assign chars = page.title | split: '' %}
+        {% assign zy = page.zhuyin | split: ' ' %}
+        {% for c in chars %}<ruby>{{ c }}<rt>{{ zy[forloop.index0] }}</rt></ruby>{% endfor %}
+      </h1>
+      <p class="idiom-pinyin">{{ page.pinyin }}</p>
+      <p class="idiom-meaning"><span class="label">意思</span>{{ page.meaning }}</p>
+      {% if page.tags %}
+      <ul class="chips">
+        {% for t in page.tags %}<li><a href="{{ '/chengyu/' | relative_url }}?tag={{ t | url_encode }}">#{{ t }}</a></li>{% endfor %}
+      </ul>
+      {% endif %}
+    </div>
+  </header>
+
+  <section class="panel source-panel">
+    <h2>出處</h2>
+    <p class="source-ref">
+      {% if book.type == 'author' %}{{ book.name }}〈{{ page.source.chapter }}〉
+      {% else %}《{{ book.name | default: page.source.book }}{% if page.source.chapter != "" and page.source.chapter %}·{{ page.source.chapter }}{% endif %}》{% endif %}
+      {% if book %}<span class="muted">{{ book.era }}{% if book.type != 'author' %}｜{{ book.author }}{% endif %}</span>{% endif %}
+    </p>
+    <blockquote class="classic-text">{{ page.source.text }}</blockquote>
+    {% if page.source.glossary %}
+    <dl class="glossary">
+      {% for g in page.source.glossary %}<div><dt>{{ g.term }}</dt><dd>{{ g.def }}</dd></div>{% endfor %}
+    </dl>
+    {% endif %}
+  </section>
+
+  <section class="panel story-panel">
+    <h2>典故故事</h2>
+    <div class="prose">{{ content }}</div>
+  </section>
+
+  {% if page.usage %}
+  <section class="panel">
+    <h2>怎麼用</h2>
+    <ul class="usage">
+      {% for u in page.usage %}<li>{{ u }}</li>{% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+
+  {% if page.synonyms or page.antonyms %}
+  <section class="panel related-panel">
+    {% if page.synonyms %}
+    <div>
+      <h2>近義成語</h2>
+      <ul class="chips">
+        {% for s in page.synonyms %}
+          {% assign hit = site.idioms | where: "title", s | first %}
+          <li>{% if hit %}<a href="{{ hit.url | relative_url }}">{{ s }}</a>{% else %}<span>{{ s }}</span>{% endif %}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+    {% if page.antonyms %}
+    <div>
+      <h2>反義成語</h2>
+      <ul class="chips chips-alt">
+        {% for s in page.antonyms %}
+          {% assign hit = site.idioms | where: "title", s | first %}
+          <li>{% if hit %}<a href="{{ hit.url | relative_url }}">{{ s }}</a>{% else %}<span>{{ s }}</span>{% endif %}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+  </section>
+  {% endif %}
+
+  <nav class="pager">
+    {% if page.previous %}<a class="prev" href="{{ page.previous.url | relative_url }}">‹ {{ page.previous.title }}</a>{% else %}<span></span>{% endif %}
+    <a href="{{ '/chengyu/' | relative_url }}">全部成語</a>
+    {% if page.next %}<a class="next" href="{{ page.next.url | relative_url }}">{{ page.next.title }} ›</a>{% else %}<span></span>{% endif %}
+  </nav>
+</article>

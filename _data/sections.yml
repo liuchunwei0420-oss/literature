@@ -1,0 +1,24 @@
+# 網站分區
+# - collection：對應 _config.yml 裡的集合名稱
+# - status：live（已上線）或 soon（籌備中）
+# - searchable：true 代表這個分區的內容會進入站內搜尋
+#
+# 詩詞上線時：把 shici 的 status 改成 live、searchable 改成 true。
+
+- key: chengyu
+  label: 成語
+  collection: idioms
+  url: /chengyu/
+  status: live
+  searchable: true
+  icon: 📜
+  intro: 從寓言、史書、諸子百家裡走出來的四字故事。
+
+- key: shici
+  label: 詩詞
+  collection: poems
+  url: /shici/
+  status: soon
+  searchable: false
+  icon: 🌙
+  intro: 唐詩、宋詞與更早的詩歌，正在準備中。
