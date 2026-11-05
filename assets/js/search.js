@@ -33,6 +33,7 @@
     it._py = normPinyin(it.pinyin);
     it._pyv = it._py.replace(/v/g, "u");
     it._initials = syl.map(function (x) { return x.charAt(0); }).join("");
+    it._tl = normPinyin(it.tailo);
     it._zy = normZhuyin(it.zhuyin);
     it._zyt = (it.zhuyin || "").replace(/\s/g, "");
     it._tags = (it.tags || []).join(" ");
@@ -53,6 +54,13 @@
       else if (it._py.indexOf(py) === 0) s += 110;
       else if (it._py.indexOf(py) > -1 || it._pyv.indexOf(py) > -1) s += 90;
       if (py.length >= 2 && it._initials.indexOf(py) === 0) s += 80;
+    }
+    // 台羅：不用打聲調、數字調、連字號
+    var tq = py.replace(/[0-9]/g, "");
+    if (tq && it._tl && /^[a-z]+$/.test(tq)) {
+      if (it._tl === tq) s += 150;
+      else if (it._tl.indexOf(tq) === 0) s += 110;
+      else if (it._tl.indexOf(tq) > -1) s += 90;
     }
     if (zy && /[ㄅ-ㄩ]/.test(zy) && it._zy.indexOf(zy) > -1) {
       s += it._zy.indexOf(zy) === 0 ? 120 : 100;
@@ -117,7 +125,7 @@
         if (!res.length) { list.hidden = true; return; }
         list.innerHTML = res.map(function (it) {
           return '<li><a href="' + esc(it.url) + '"><span>' + mark(it.title, q) +
-            '</span><small>' + esc(it.pinyin || it.author) + "</small></a></li>";
+            '</span><small>' + esc(it.pinyin || it.tailo || it.author) + "</small></a></li>";
         }).join("");
         list.hidden = false;
       });
@@ -157,9 +165,9 @@
         status.textContent = res.length ? "找到 " + res.length + " 筆「" + q + "」的結果" : "找不到「" + q + "」。換個關鍵字試試，例如動物名稱或拼音。";
         box.innerHTML = res.map(function (it) {
           return '<a class="card result" href="' + esc(it.url) + '">' +
-            (it.image ? '<img src="' + esc(it.image) + '" alt="" loading="lazy">' : "<span></span>") +
+            (it.image ? '<img src="' + esc(it.image) + '" alt="" loading="lazy">' : '<span class="result-tile">' + esc(it.title.charAt(0)) + "</span>") +
             "<div><h3>" + mark(it.title, q) + '<span class="tag">' + esc(it.section) + "</span></h3>" +
-            '<div class="meta">' + esc(it.pinyin) + (it.source ? "　出自" + esc(it.source) : "") + "</div>" +
+            '<div class="meta">' + esc(it.pinyin || it.tailo) + (it.kind ? "　" + esc(it.kind) : "") + (it.source ? "　出自" + esc(it.source) : "") + "</div>" +
             "<p>" + snippet(it, q) + "</p></div></a>";
         }).join("");
       });

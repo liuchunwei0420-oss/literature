@@ -1,0 +1,33 @@
+---
+layout: default
+title: 文章
+scripts:
+  - /assets/js/filter.js
+---
+<section class="wrap list-page">
+  <header class="page-head">
+    <h1>文章</h1>
+    <p>古典文學與道教經典的白話整理。目前收錄 {{ site.articles.size }} 篇。</p>
+  </header>
+
+  {% assign all_tags = "" | split: "" %}
+  {% for d in site.articles %}{% if d.tags %}{% assign all_tags = all_tags | concat: d.tags %}{% endif %}{% endfor %}
+  {% assign all_tags = all_tags | uniq %}
+  <div class="filter-bar" data-filter-bar>
+    <button type="button" class="chip is-on" data-tag="">全部</button>
+    {% for t in all_tags %}<button type="button" class="chip" data-tag="{{ t }}">#{{ t }}</button>{% endfor %}
+  </div>
+
+  <p class="muted" data-filter-count></p>
+  <div class="article-list" data-filter-grid>
+    {% assign posts = site.articles | sort: "date" | reverse %}
+    {% for d in posts %}
+    <a class="card idiom-card article-card" href="{{ d.url | relative_url }}" data-tags="{% if d.tags %}{{ d.tags | join: ',' }}{% endif %}">
+      <h3>{{ d.title }}</h3>
+      <p class="muted">{{ d.date | date: "%Y 年 %-m 月 %-d 日" }}</p>
+      <p>{{ d.summary }}</p>
+    </a>
+    {% endfor %}
+  </div>
+  <p class="empty" data-filter-empty hidden>這個分類還沒有文章。</p>
+</section>

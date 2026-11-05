@@ -1,0 +1,28 @@
+---
+layout: default
+---
+<article class="wrap article-page">
+  <nav class="crumbs" aria-label="麵包屑">
+    <a href="{{ '/' | relative_url }}">首頁</a> › <a href="{{ '/wenzhang/' | relative_url }}">文章</a> › <span>{{ page.title }}</span>
+  </nav>
+
+  <header class="article-head">
+    <h1>{{ page.title }}</h1>
+    <p class="muted">{{ page.date | date: "%Y 年 %-m 月 %-d 日" }}{% if page.tags %}　{% for t in page.tags %}<a href="{{ '/wenzhang/' | relative_url }}?tag={{ t | url_encode }}">#{{ t }}</a> {% endfor %}{% endif %}</p>
+    {% if page.summary %}<p class="article-summary">{{ page.summary }}</p>{% endif %}
+  </header>
+
+  <nav class="panel toc" data-toc hidden>
+    <h2>目錄</h2>
+    <ol data-toc-list></ol>
+  </nav>
+
+  <div class="prose article-body" data-article-body>{{ content }}</div>
+
+  <nav class="pager">
+    {% if page.previous %}<a class="prev" href="{{ page.previous.url | relative_url }}">‹ {{ page.previous.title }}</a>{% else %}<span></span>{% endif %}
+    <a href="{{ '/wenzhang/' | relative_url }}">全部文章</a>
+    {% if page.next %}<a class="next" href="{{ page.next.url | relative_url }}">{{ page.next.title }} ›</a>{% else %}<span></span>{% endif %}
+  </nav>
+</article>
+<script src="{{ '/assets/js/toc.js' | relative_url }}" defer></script>

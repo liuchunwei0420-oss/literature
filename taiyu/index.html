@@ -1,0 +1,34 @@
+---
+layout: default
+title: 台語俚諺
+scripts:
+  - /assets/js/filter.js
+---
+<section class="wrap list-page">
+  <header class="page-head">
+    <h1>台語俚語與俗諺</h1>
+    <p>台灣台語裡流傳的老話。每則都有台羅拼音、白話意思和用法。目前收錄 {{ site.taiyu.size }} 則。第一次來？先看<a href="{{ '/taiyu/about/' | relative_url }}">什麼是俗諺、俚語和歇後語</a>。</p>
+  </header>
+
+  {% assign all_tags = "" | split: "" %}
+  {% for d in site.taiyu %}
+    {% assign kt = d.kind | split: "," %}
+    {% assign all_tags = all_tags | concat: kt %}
+  {% endfor %}
+  {% assign all_tags = all_tags | uniq %}
+  {% assign topic_tags = "" | split: "" %}
+  {% for d in site.taiyu %}{% if d.tags %}{% assign topic_tags = topic_tags | concat: d.tags %}{% endif %}{% endfor %}
+  {% assign topic_tags = topic_tags | uniq %}
+
+  <div class="filter-bar" data-filter-bar>
+    <button type="button" class="chip is-on" data-tag="">全部</button>
+    {% for t in all_tags %}<button type="button" class="chip" data-tag="{{ t }}">{{ t }}</button>{% endfor %}
+    {% for t in topic_tags %}<button type="button" class="chip" data-tag="{{ t }}">#{{ t }}</button>{% endfor %}
+  </div>
+
+  <p class="muted" data-filter-count></p>
+  <div class="card-grid" data-filter-grid>
+    {% for d in site.taiyu %}{% include taiyu-card.html item=d %}{% endfor %}
+  </div>
+  <p class="empty" data-filter-empty hidden>這個分類還沒有內容。</p>
+</section>

@@ -1,7 +1,7 @@
 <form class="search-box" action="{{ '/search/' | relative_url }}" method="get" role="search">
   <label class="sr-only" for="q-{{ include.id | default: 'top' }}">搜尋</label>
   <input id="q-{{ include.id | default: 'top' }}" name="q" type="search"
-         placeholder="{{ include.placeholder | default: '搜尋成語、拼音、注音…' }}"
+         placeholder="{{ include.placeholder | default: '搜尋成語、台語俚諺、拼音…' }}"
          autocomplete="off" data-search-input>
   <button type="submit" aria-label="搜尋">
     <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M15.5 15.5 21 21" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
