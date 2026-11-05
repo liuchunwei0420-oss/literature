@@ -21,6 +21,12 @@ collections:
   idioms:            # 成語 → _idioms/ 資料夾
     output: true
     permalink: /chengyu/:name/
+  taiyu:             # 台語俗諺、俚語 → _taiyu/ 資料夾
+    output: true
+    permalink: /taiyu/:name/
+  articles:          # 文章 → _articles/ 資料夾
+    output: true
+    permalink: /wenzhang/:name/
   # poems:           # 詩詞 → _poems/ 資料夾（預留）
   #   output: true
   #   permalink: /shici/:name/
@@ -31,6 +37,16 @@ defaults:
       type: idioms
     values:
       layout: idiom
+  - scope:
+      path: ""
+      type: taiyu
+    values:
+      layout: taiyu
+  - scope:
+      path: ""
+      type: articles
+    values:
+      layout: article
   # - scope:
   #     path: ""
   #     type: poems

@@ -20,7 +20,8 @@ scripts:
 
   <p class="muted" data-filter-count></p>
   <div class="article-list" data-filter-grid>
-    {% assign posts = site.articles | sort: "date" | reverse %}
+    {% assign posts = site.articles %}
+    {% if posts %}{% assign posts = posts | sort: "date" | reverse %}{% endif %}
     {% for d in posts %}
     <a class="card idiom-card article-card" href="{{ d.url | relative_url }}" data-tags="{% if d.tags %}{{ d.tags | join: ',' }}{% endif %}">
       <h3>{{ d.title }}</h3>
