@@ -19,7 +19,7 @@ layout: default
     <div class="taiyu-head">
     <p class="taiyu-kind"><span class="label">{{ page.kind }}</span></p>
     <h1 class="taiyu-title">{{ page.title }}</h1>
-    <p class="idiom-pinyin">{{ page.tailo }}</p>
+    {% if page.tailo %}<p class="idiom-pinyin">{{ page.tailo }}</p>{% endif %}
     <p class="idiom-meaning"><span class="label">意思</span>{{ page.meaning }}</p>
     {% if page.literal %}<p class="idiom-meaning"><span class="label">字面</span>{{ page.literal }}</p>{% endif %}
     {% if page.tags %}
@@ -56,7 +56,17 @@ layout: default
   </section>
   {% endif %}
 
-  <p class="muted taiyu-note">台羅拼音與用字依常見寫法整理，校對持續進行中。</p>
+  {% if page.refs %}
+  <section class="panel">
+    <h2>查證出處</h2>
+    <ul class="usage">
+      {% for r in page.refs %}<li>{{ r }}</li>{% endfor %}
+    </ul>
+    {% if page.refnote %}<p class="muted">{{ page.refnote }}</p>{% endif %}
+    {% unless page.proofread %}<p class="muted">這一條的出處較弱，仍待查證。</p>{% endunless %}
+  </section>
+  {% endif %}
+  <p class="muted taiyu-note">各條的字詞與釋義出處見上方「查證出處」。台羅拼音尚未全部補齊，只放有辭典可對照的。</p>
 
   <nav class="pager">
     {% if page.previous %}<a class="prev" href="{{ page.previous.url | relative_url }}">‹ {{ page.previous.title }}</a>{% else %}<span></span>{% endif %}

@@ -3,13 +3,17 @@ title: 好酒沉甕底
 tailo: hó-tsiú tîm àng-té
 kind: 俗諺
 illustration: /assets/illustrations/taiyu/ho-tsiu-tim-ang-te.svg
-meaning: 好東西常常留到最後才出現。
+meaning: 好東西、好戲常常留在後頭，不必急著下結論。
 literal: 好酒會沉在酒甕的最底下。
 tags: [處世]
 usage:
   - 最後壓軸出場的人才是真功夫，大家都說「好酒沉甕底」。
   - 形容有實力的人不急著表現。
-proofread: false
+proofread: true
+refs:
+  - "教育部《國語辭典》（經漢典轉載）收錄為諺語：比喻好戲在後頭"
+  - "母語教室「每週一句閩南語俗諺」：好酒沉甕底，意指好戲在後頭"
+refnote: "辭典釋義偏「好戲在後頭」，下方「意思」已照此調整。"
 ---
 
 從前的酒放在大酒甕裡，酒越好、越濃，就越沉在底部。要喝到最好的那一口，得等到最後。

@@ -13,7 +13,7 @@
   {% endif %}
   <div class="card-body">
     <h3 class="card-title card-title-sm">{{ d.title }}</h3>
-    <p class="card-pinyin">{{ d.tailo }}</p>
+    {% if d.tailo %}<p class="card-pinyin">{{ d.tailo }}</p>{% endif %}
     <p class="card-meaning">{{ d.meaning }}</p>
   </div>
 </a>
