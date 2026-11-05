@@ -14,6 +14,32 @@
   icon: 📜
   intro: 從寓言、史書、諸子百家裡走出來的四字故事。
 
+- key: youxi
+  label: 小遊戲
+  url: /youxi/
+  status: live
+  searchable: false
+  icon: 🎲
+  intro: 看意思猜成語、看圖猜成語、缺字填空，玩一玩就記住了。
+
+- key: taiyu
+  label: 台語俚諺
+  collection: taiyu
+  url: /taiyu/
+  status: live
+  searchable: true
+  icon: 🏮
+  intro: 台灣台語的俗諺、俚語和歇後語，附台羅拼音與白話說明。
+
+- key: wenzhang
+  label: 文章
+  collection: articles
+  url: /wenzhang/
+  status: live
+  searchable: true
+  icon: 📖
+  intro: 古典文學與道教經典的白話整理、導讀與札記。
+
 - key: shici
   label: 詩詞
   collection: poems

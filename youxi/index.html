@@ -1,0 +1,49 @@
+---
+layout: default
+title: 成語小遊戲
+scripts:
+  - /assets/js/games.js
+---
+<section class="wrap games-page">
+  <header class="page-head">
+    <h1>成語小遊戲</h1>
+    <p>選一種玩法，每回合 10 題。答錯的成語，最後會列出來讓你點進去複習。</p>
+  </header>
+
+  <div class="game-modes" data-game-modes>
+    <button type="button" class="mode-card" data-mode="meaning">
+      <span class="mode-icon" aria-hidden="true">💬</span>
+      <strong>看意思猜成語</strong>
+      <small>讀一句白話解釋，選出對的成語。</small>
+      <em data-best="meaning"></em>
+    </button>
+    <button type="button" class="mode-card" data-mode="picture">
+      <span class="mode-icon" aria-hidden="true">🖼️</span>
+      <strong>看圖猜成語</strong>
+      <small>看插圖，猜它畫的是哪一個成語。</small>
+      <em data-best="picture"></em>
+    </button>
+    <button type="button" class="mode-card" data-mode="blank">
+      <span class="mode-icon" aria-hidden="true">✏️</span>
+      <strong>缺字填空</strong>
+      <small>成語少了一個字，把它補回去。</small>
+      <em data-best="blank"></em>
+    </button>
+  </div>
+
+  <div class="panel game-board" data-game-board hidden>
+    <div class="game-top">
+      <span data-game-progress></span>
+      <span data-game-score></span>
+    </div>
+    <div class="game-question" data-game-question></div>
+    <div class="game-options" data-game-options></div>
+    <p class="game-feedback" data-game-feedback aria-live="polite"></p>
+    <div class="game-actions">
+      <button type="button" class="btn" data-game-next hidden>下一題</button>
+      <button type="button" class="btn-ghost" data-game-quit>換玩法</button>
+    </div>
+  </div>
+
+  <div class="panel game-result" data-game-result hidden></div>
+</section>

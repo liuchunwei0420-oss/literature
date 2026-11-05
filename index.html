@@ -28,7 +28,7 @@ scripts:
       <div>
         <h2>{{ sec.label }}{% if sec.status == 'soon' %}<em class="soon">籌備中</em>{% endif %}</h2>
         <p>{{ sec.intro }}</p>
-        {% if sec.status == 'live' %}<p class="muted">目前收錄 {{ site[sec.collection].size }} 則</p>{% endif %}
+        {% if sec.status == 'live' and sec.collection %}<p class="muted">目前收錄 {{ site[sec.collection].size }} 則</p>{% endif %}
       </div>
     </a>
     {% endfor %}

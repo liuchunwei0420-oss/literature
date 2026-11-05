@@ -1,0 +1,67 @@
+---
+layout: default
+---
+<article class="wrap idiom-page taiyu-page">
+  <nav class="crumbs" aria-label="麵包屑">
+    <a href="{{ '/' | relative_url }}">首頁</a> › <a href="{{ '/taiyu/' | relative_url }}">台語俚諺</a> › <span>{{ page.title }}</span>
+  </nav>
+
+  <header class="taiyu-hero{% if page.illustration %} has-art{% endif %}">
+    {% if page.illustration %}
+    <div class="idiom-art">
+      <img src="{{ page.illustration | relative_url }}" alt="「{{ page.title }}」插圖">
+      <button type="button" class="btn share-btn" data-share-card
+        data-title="{{ page.title }}" data-pinyin="{{ page.tailo }}" data-meaning="{{ page.meaning | escape }}"
+        data-slug="{{ page.url | split: '/' | last }}" data-img="{{ page.illustration | relative_url }}" data-site="{{ site.title }}"
+        data-link="{{ page.url | absolute_url | remove: 'https://' | remove: 'http://' }}">📤 下載分享卡</button>
+    </div>
+    {% endif %}
+    <div class="taiyu-head">
+    <p class="taiyu-kind"><span class="label">{{ page.kind }}</span></p>
+    <h1 class="taiyu-title">{{ page.title }}</h1>
+    <p class="idiom-pinyin">{{ page.tailo }}</p>
+    <p class="idiom-meaning"><span class="label">意思</span>{{ page.meaning }}</p>
+    {% if page.literal %}<p class="idiom-meaning"><span class="label">字面</span>{{ page.literal }}</p>{% endif %}
+    {% if page.tags %}
+    <ul class="chips">
+      {% for t in page.tags %}<li><a href="{{ '/taiyu/' | relative_url }}?tag={{ t | url_encode }}">#{{ t }}</a></li>{% endfor %}
+    </ul>
+    {% endif %}
+    </div>
+  </header>
+
+  <section class="panel story-panel">
+    <h2>說明</h2>
+    <div class="prose">{{ content }}</div>
+  </section>
+
+  {% if page.usage %}
+  <section class="panel">
+    <h2>怎麼用</h2>
+    <ul class="usage">
+      {% for u in page.usage %}<li>{{ u }}</li>{% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+
+  {% if page.related %}
+  <section class="panel">
+    <h2>相關說法</h2>
+    <ul class="chips">
+      {% for s in page.related %}
+        {% assign hit = site.taiyu | where: "title", s | first %}
+        <li>{% if hit %}<a href="{{ hit.url | relative_url }}">{{ s }}</a>{% else %}<span>{{ s }}</span>{% endif %}</li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+
+  <p class="muted taiyu-note">台羅拼音與用字依常見寫法整理，校對持續進行中。</p>
+
+  <nav class="pager">
+    {% if page.previous %}<a class="prev" href="{{ page.previous.url | relative_url }}">‹ {{ page.previous.title }}</a>{% else %}<span></span>{% endif %}
+    <a href="{{ '/taiyu/' | relative_url }}">全部台語俚諺</a>
+    {% if page.next %}<a class="next" href="{{ page.next.url | relative_url }}">{{ page.next.title }} ›</a>{% else %}<span></span>{% endif %}
+  </nav>
+</article>
+<script src="{{ '/assets/js/share-card.js' | relative_url }}" defer></script>

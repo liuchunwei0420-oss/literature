@@ -1,0 +1,19 @@
+{% assign d = include.item %}
+<a class="card idiom-card taiyu-card" href="{{ d.url | relative_url }}" data-tags="{{ d.kind }}{% if d.tags %},{{ d.tags | join: ',' }}{% endif %}">
+  {% if d.illustration %}
+  <div class="card-art tile-art has-img">
+    <span class="tile-kind">{{ d.kind }}</span>
+    <img src="{{ d.illustration | relative_url }}" alt="" loading="lazy">
+  </div>
+  {% else %}
+  <div class="card-art tile-art" aria-hidden="true">
+    <span class="tile-kind">{{ d.kind }}</span>
+    <span class="tile-char">{{ d.title | slice: 0, 1 }}</span>
+  </div>
+  {% endif %}
+  <div class="card-body">
+    <h3 class="card-title card-title-sm">{{ d.title }}</h3>
+    <p class="card-pinyin">{{ d.tailo }}</p>
+    <p class="card-meaning">{{ d.meaning }}</p>
+  </div>
+</a>

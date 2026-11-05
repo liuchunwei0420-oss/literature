@@ -10,6 +10,10 @@ layout: default
   <header class="idiom-hero">
     <div class="idiom-art">
       {% if page.illustration %}<img src="{{ page.illustration | relative_url }}" alt="「{{ page.title }}」插圖">{% endif %}
+      <button type="button" class="btn share-btn" data-share-card
+        data-title="{{ page.title }}" data-pinyin="{{ page.pinyin }}" data-meaning="{{ page.meaning | escape }}"
+        data-slug="{{ page.url | split: '/' | last }}" data-img="{{ page.illustration | relative_url }}" data-site="{{ site.title }}"
+        data-link="{{ page.url | absolute_url | remove: 'https://' | remove: 'http://' }}">📤 下載分享卡</button>
     </div>
     <div class="idiom-head">
       <h1 class="idiom-title">
@@ -83,9 +87,18 @@ layout: default
   </section>
   {% endif %}
 
+  <section class="panel quiz-panel" data-idiom-quiz data-title="{{ page.title }}" data-meaning="{{ page.meaning | escape }}" hidden>
+    <h2>考考你</h2>
+    <div data-q1></div>
+    <div data-q2></div>
+    <p class="muted">想多玩幾題？去 <a href="{{ '/youxi/' | relative_url }}">成語小遊戲</a>。</p>
+  </section>
+
   <nav class="pager">
     {% if page.previous %}<a class="prev" href="{{ page.previous.url | relative_url }}">‹ {{ page.previous.title }}</a>{% else %}<span></span>{% endif %}
     <a href="{{ '/chengyu/' | relative_url }}">全部成語</a>
     {% if page.next %}<a class="next" href="{{ page.next.url | relative_url }}">{{ page.next.title }} ›</a>{% else %}<span></span>{% endif %}
   </nav>
 </article>
+<script src="{{ '/assets/js/idiom-quiz.js' | relative_url }}" defer></script>
+<script src="{{ '/assets/js/share-card.js' | relative_url }}" defer></script>
