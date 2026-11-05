@@ -1,8 +1,8 @@
 # 古典小書房
 
 用白話故事和可愛插圖認識成語典故的網站。用 Jekyll 製作，可以直接放上 GitHub Pages。
-目前有「成語」分區，「詩詞」分區已經預留好位置。
-TEST
+目前有「成語」「台語俚諺」「文章」「詩詞」四個分區。
+
 ## 資料夾怎麼看
 
 ```
@@ -23,7 +23,7 @@ assets/
   js/home.js         首頁「今日成語」
   illustrations/     插圖（SVG）
 chengyu/index.html   成語列表頁
-shici/index.html     詩詞頁（目前是「籌備中」）
+shici/index.html     詩詞列表（目前是《唐詩三百首》五言絕句）
 search/index.html    搜尋結果頁
 search.json          搜尋索引，建置時自動產生，不用手動改
 tools/               產生成語檔案與插圖的小工具（不會出現在網站上）
@@ -129,13 +129,19 @@ bundle exec jekyll serve
 
 然後打開 http://localhost:4000
 
-## 之後加上詩詞
+## 詩詞（`_poems/`）
 
-架構已經留好了，照 `_templates/poem.md` 最上面的步驟做就行：
+已啟用。目前收《唐詩三百首》五言絕句 29 首。
 
-1. `_config.yml` 打開 `poems` 集合
-2. `_data/sections.yml` 把詩詞改成 `live`、`searchable: true`
-3. 新增 `_layouts/poem.html`
-4. 把詩詞放進 `_poems/`
+新增一首：複製 `_templates/poem.md` 到 `_poems/`，照欄位填。
+`book` 和 `form` 相同的詩，會自動排成一組，頁面上有上一首／下一首。
 
-詩詞會自動出現在選單、首頁和搜尋裡。書目 `sources.yml` 也可以共用（例如《詩經》、《楚辭》）。
+原文來源：GitHub 開放資料庫 chinese-poetry（二手電子文本）。白話、注釋、賞析為本站整理。
+
+## 台語俚語與俗諺（`_taiyu/`）
+
+- 新增一則：複製 `_templates/taiyu.md` 到 `_taiyu/`，檔名用台羅去聲調、以 `-` 連接。
+- `kind` 只能填：俗諺、俚語、歇後語。列表頁會自動長出篩選按鈕。
+- 目前沒有插圖，列表用「第一個字」的色塊代替。之後要加插圖，在檔案加 `illustration:` 欄位即可，頁面和搜尋結果會自動使用。
+- 搜尋可以直接打台羅，不用打聲調符號（例如 `tsiah`）。
+- 查校對進度：`grep -L "proofread: true" _taiyu/*.md`

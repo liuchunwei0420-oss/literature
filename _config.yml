@@ -3,7 +3,7 @@
 # ============================================================
 title: 古典小書房
 tagline: 一則成語，一段故事
-description: 用白話故事和可愛插圖，認識成語背後的典故。之後還會加入古典詩詞。
+description: 用白話故事和可愛插圖，認識成語、台語俗諺和古典詩詞。
 lang: zh-Hant-TW
 
 # 部署到 GitHub Pages 時要改這兩行：
@@ -15,7 +15,7 @@ baseurl: "/literature"
 # ============================================================
 # 內容集合（collections）
 # 每一種內容放在自己的資料夾，網址也分開。
-# 之後要加詩詞，把下面 poems 那段的 # 拿掉即可。
+# 詩詞已啟用（poems）。
 # ============================================================
 collections:
   idioms:            # 成語 → _idioms/ 資料夾
@@ -27,9 +27,9 @@ collections:
   articles:          # 文章 → _articles/ 資料夾
     output: true
     permalink: /wenzhang/:name/
-  # poems:           # 詩詞 → _poems/ 資料夾（預留）
-  #   output: true
-  #   permalink: /shici/:name/
+  poems:             # 詩詞 → _poems/ 資料夾
+    output: true
+    permalink: /shici/:name/
 
 defaults:
   - scope:
@@ -47,11 +47,11 @@ defaults:
       type: articles
     values:
       layout: article
-  # - scope:
-  #     path: ""
-  #     type: poems
-  #   values:
-  #     layout: poem
+  - scope:
+      path: ""
+      type: poems
+    values:
+      layout: poem
 
 # ============================================================
 # 建置設定

@@ -3,7 +3,6 @@
 # - status：live（已上線）或 soon（籌備中）
 # - searchable：true 代表這個分區的內容會進入站內搜尋
 #
-# 詩詞上線時：把 shici 的 status 改成 live、searchable 改成 true。
 
 - key: chengyu
   label: 成語
@@ -44,7 +43,7 @@
   label: 詩詞
   collection: poems
   url: /shici/
-  status: soon
-  searchable: false
+  status: live
+  searchable: true
   icon: 🌙
-  intro: 唐詩、宋詞與更早的詩歌，正在準備中。
+  intro: 從《唐詩三百首》開始，每首附白話、注釋和賞析。

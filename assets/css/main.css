@@ -231,7 +231,8 @@ mark { background: #ffe8a3; color: inherit; border-radius: 3px; padding: 0 1px; 
 @media (max-width: 760px) {
   body { font-size: 16px; }
   .header-inner { gap: 10px; }
-  .site-nav { margin-left: 0; order: 3; }
+  .site-nav { margin-left: 0; order: 3; width: 100%; overflow-x: auto; gap: 2px; -webkit-overflow-scrolling: touch; }
+  .site-nav a { white-space: nowrap; padding-left: 12px; padding-right: 12px; }
   .search-box { width: 100%; order: 4; }
   .brand { flex: 1; }
   .hero { padding-top: 28px; }
@@ -371,3 +372,41 @@ button.btn { font: inherit; border: 0; cursor: pointer; }
 .tile-art.has-img .tile-kind { z-index: 1; }
 .taiyu-hero.has-art { max-width: none; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: center; }
 @media (max-width: 760px) { .taiyu-hero.has-art { grid-template-columns: 1fr; } }
+
+/* ---------- 詩詞 ---------- */
+.btn.ghost { background: var(--card); color: var(--ink); border: 1px solid var(--line); box-shadow: none; padding: 8px 18px; }
+.btn.ghost:hover { box-shadow: none; background: var(--paper-2); }
+.shelf-title { font-size: 24px; margin: 8px 0 4px; display: flex; align-items: baseline; gap: 10px; }
+.shelf-title small { font-size: 15px; font-weight: 400; }
+.filter-authors { margin-top: -6px; }
+.shelf-next { margin-top: 8px; }
+.poem-card { display: flex; flex-direction: column; gap: 10px; padding: 18px 20px; color: inherit; }
+.poem-card:hover { text-decoration: none; }
+.poem-card-head { display: grid; grid-template-columns: auto 1fr; column-gap: 10px; align-items: center; }
+.poem-no { grid-row: span 2; width: 34px; height: 34px; border-radius: 50%; background: var(--paper-2); color: var(--seal); display: grid; place-items: center; font-size: 14px; font-weight: 700; }
+.poem-card .card-title { margin: 0; }
+.poem-card-author { margin: 0; font-size: 14px; color: var(--ink-soft); }
+.poem-card-lines p { margin: 0; font-size: 18px; letter-spacing: .12em; line-height: 1.7; color: var(--ink); }
+.poem-card .card-meaning { margin: 0; }
+.poem-hero { text-align: center; padding: 8px 0 28px; }
+.poem-meta { margin: 0 0 10px; }
+.poem-title { font-size: clamp(32px, 5vw, 50px); letter-spacing: .12em; margin: 0 0 4px; }
+.poem-author { margin: 0 0 22px; color: var(--ink-soft); font-size: 18px; letter-spacing: .06em; }
+.poem-lines { display: inline-block; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px 40px; }
+.poem-lines p { margin: 0; font-size: clamp(22px, 3.6vw, 30px); letter-spacing: .22em; line-height: 1.9; }
+.poem-alt { margin: 14px 0 0; }
+.poem-tags { justify-content: center; margin-top: 12px; }
+.poem-pairs { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; }
+.poem-pairs li { display: grid; grid-template-columns: 9em 1fr; gap: 16px; align-items: baseline; padding-bottom: 10px; border-bottom: 1px dashed var(--line); }
+.poem-pairs li:last-child { border-bottom: 0; padding-bottom: 0; }
+.poem-pairs .orig { font-size: 19px; letter-spacing: .1em; color: var(--seal); }
+.poem-notes { margin: 0; display: grid; gap: 10px; }
+.poem-notes div { display: grid; grid-template-columns: 6em 1fr; gap: 14px; }
+.poem-notes dt { font-weight: 700; }
+.poem-notes dd { margin: 0; }
+.poem-nav { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; margin: 8px 0 18px; }
+@media (max-width: 760px) {
+  .poem-lines { padding: 16px 22px; }
+  .poem-pairs li { grid-template-columns: 1fr; gap: 2px; }
+  .poem-notes div { grid-template-columns: 1fr; gap: 2px; }
+}

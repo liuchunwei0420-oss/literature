@@ -1,0 +1,12 @@
+{% assign d = include.item %}
+<a class="card poem-card" href="{{ d.url | relative_url }}" data-tags="{{ d.author }}{% if d.tags %},{{ d.tags | join: ',' }}{% endif %}">
+  <div class="poem-card-head">
+    <span class="poem-no">{{ d.order }}</span>
+    <h3 class="card-title card-title-sm">{{ d.title }}</h3>
+    <p class="poem-card-author">{{ d.author }}</p>
+  </div>
+  <div class="poem-card-lines">
+    <p>{{ d.lines[0] }}</p><p>{{ d.lines[1] }}</p>
+  </div>
+  <p class="card-meaning">{{ d.summary }}</p>
+</a>

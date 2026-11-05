@@ -1,10 +1,41 @@
 ---
 layout: default
 title: 詩詞
+scripts:
+  - /assets/js/filter.js
 ---
-<section class="wrap coming-soon">
-  <img src="{{ '/assets/illustrations/coming-soon-moon.svg' | relative_url }}" alt="" width="260">
-  <h1>詩詞館籌備中</h1>
-  <p>唐詩、宋詞和更早的詩歌，正在一首一首整理。<br>先去成語故事館逛逛吧！</p>
-  <a class="btn" href="{{ '/chengyu/' | relative_url }}">去看成語</a>
+{% assign wujue = site.poems | where: "book", "唐詩三百首" | where: "form", "五言絕句" | sort: "order" %}
+<section class="wrap list-page">
+  <header class="page-head">
+    <h1>詩詞館</h1>
+    <p>從清代蘅塘退士編的《唐詩三百首》開始。每首附原文、白話翻譯、字詞注釋和賞析。第一次來？先看<a href="{{ '/shici/about/' | relative_url }}">什麼是五言絕句、這些詩從哪裡來</a>。</p>
+  </header>
+
+  <h2 class="shelf-title">唐詩三百首．五言絕句 <small class="muted">{{ wujue.size }} 首</small></h2>
+  <p class="muted">五個字一句，一首四句，總共二十個字。最短的詩體，卻有最多名句。</p>
+
+  {% assign topic_tags = "" | split: "" %}
+  {% assign authors = "" | split: "" %}
+  {% for d in wujue %}{% if d.tags %}{% assign topic_tags = topic_tags | concat: d.tags %}{% endif %}{% assign au = d.author | split: "," %}{% assign authors = authors | concat: au %}{% endfor %}
+  {% assign topic_tags = topic_tags | uniq %}
+  {% assign authors = authors | uniq %}
+
+  <div class="filter-bar" data-filter-bar>
+    <button type="button" class="chip is-on" data-tag="">全部</button>
+    {% for t in topic_tags %}<button type="button" class="chip" data-tag="{{ t }}">#{{ t }}</button>{% endfor %}
+  </div>
+  <div class="filter-bar filter-authors" data-filter-bar>
+    {% for a in authors %}<button type="button" class="chip" data-tag="{{ a }}">{{ a }}</button>{% endfor %}
+  </div>
+
+  <p class="muted" data-filter-count data-unit="首"></p>
+  <div class="card-grid" data-filter-grid>
+    {% for d in wujue %}{% include poem-card.html item=d %}{% endfor %}
+  </div>
+  <p class="empty" data-filter-empty hidden>這個分類還沒有內容。</p>
+
+  <section class="panel shelf-next">
+    <h2>接下來整理</h2>
+    <p>《唐詩三百首》還有五言樂府、七言絕句、五言律詩、七言律詩、五言古詩、七言古詩和樂府，會一體一體陸續上架。</p>
+  </section>
 </section>

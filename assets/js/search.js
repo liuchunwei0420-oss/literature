@@ -167,7 +167,7 @@
           return '<a class="card result" href="' + esc(it.url) + '">' +
             (it.image ? '<img src="' + esc(it.image) + '" alt="" loading="lazy">' : '<span class="result-tile">' + esc(it.title.charAt(0)) + "</span>") +
             "<div><h3>" + mark(it.title, q) + '<span class="tag">' + esc(it.section) + "</span></h3>" +
-            '<div class="meta">' + esc(it.pinyin || it.tailo) + (it.kind ? "　" + esc(it.kind) : "") + (it.source ? "　出自" + esc(it.source) : "") + "</div>" +
+            '<div class="meta">' + esc(it.pinyin || it.tailo || (it.section === "詩詞" ? it.author : "")) + (it.kind ? "　" + esc(it.kind) : "") + (it.source ? "　出自" + esc(it.source) : "") + "</div>" +
             "<p>" + snippet(it, q) + "</p></div></a>";
         }).join("");
       });

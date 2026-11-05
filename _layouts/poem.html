@@ -1,0 +1,68 @@
+---
+layout: default
+---
+{% assign same = site.poems | where: "book", page.book | where: "form", page.form | sort: "order" %}
+{% assign prev = nil %}{% assign next = nil %}
+{% for p in same %}
+  {% if p.url == page.url %}
+    {% assign i0 = forloop.index0 | minus: 1 %}{% assign i1 = forloop.index0 | plus: 1 %}
+    {% if forloop.first == false %}{% assign prev = same[i0] %}{% endif %}
+    {% if forloop.last == false %}{% assign next = same[i1] %}{% endif %}
+  {% endif %}
+{% endfor %}
+<article class="wrap poem-page">
+  <nav class="crumbs" aria-label="麵包屑">
+    <a href="{{ '/' | relative_url }}">首頁</a> › <a href="{{ '/shici/' | relative_url }}">詩詞</a> › <span>{{ page.title }}</span>
+  </nav>
+
+  <header class="poem-hero">
+    <p class="poem-meta"><span class="label">{{ page.book }}．{{ page.form }}．第 {{ page.order }} 首</span></p>
+    <h1 class="poem-title">{{ page.title }}</h1>
+    <p class="poem-author">〔{{ page.dynasty }}〕{{ page.author }}</p>
+    <div class="poem-lines">
+      {% for l in page.lines %}<p>{{ l }}</p>{% endfor %}
+    </div>
+    {% if page.alt_title %}<p class="muted poem-alt">{{ page.alt_title }}</p>{% endif %}
+    {% if page.tags %}
+    <ul class="chips poem-tags">
+      {% for t in page.tags %}<li><a href="{{ '/shici/' | relative_url }}?tag={{ t | url_encode }}">#{{ t }}</a></li>{% endfor %}
+    </ul>
+    {% endif %}
+  </header>
+
+  <section class="panel">
+    <h2>白話翻譯</h2>
+    <ol class="poem-pairs">
+      {% for l in page.lines %}<li><span class="orig">{{ l }}</span><span class="plain">{{ page.baihua[forloop.index0] }}</span></li>{% endfor %}
+    </ol>
+  </section>
+
+  {% if page.notes %}
+  <section class="panel">
+    <h2>字詞注釋</h2>
+    <dl class="poem-notes">
+      {% for n in page.notes %}<div><dt>{{ n.word }}</dt><dd>{{ n.note }}</dd></div>{% endfor %}
+    </dl>
+  </section>
+  {% endif %}
+
+  <section class="panel story-panel">
+    <h2>賞析</h2>
+    <div class="prose">{{ content }}</div>
+  </section>
+
+  {% if page.variants %}
+  <section class="panel">
+    <h2>版本與異文</h2>
+    <ul class="usage">{% for v in page.variants %}<li>{{ v }}</li>{% endfor %}</ul>
+  </section>
+  {% endif %}
+
+  <nav class="poem-nav">
+    {% if prev %}<a class="btn ghost" href="{{ prev.url | relative_url }}">← {{ prev.title }}</a>{% else %}<span></span>{% endif %}
+    <a class="btn ghost" href="{{ '/shici/' | relative_url }}">回目錄</a>
+    {% if next %}<a class="btn ghost" href="{{ next.url | relative_url }}">{{ next.title }} →</a>{% else %}<span></span>{% endif %}
+  </nav>
+
+  <p class="muted taiyu-note">原文據開放資料庫 chinese-poetry 所收《唐詩三百首》；白話翻譯、注釋與賞析為本站整理。<a href="{{ '/shici/about/' | relative_url }}">版本說明</a></p>
+</article>
