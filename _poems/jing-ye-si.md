@@ -4,6 +4,7 @@ author: 李白
 dynasty: 唐
 book: 唐詩三百首
 form: 五言絕句
+illustration: /assets/illustrations/poems/jing-ye-si.svg
 order: 10
 lines:
 - 床前明月光，

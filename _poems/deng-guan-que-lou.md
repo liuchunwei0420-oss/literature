@@ -4,6 +4,7 @@ author: 王之渙
 dynasty: 唐
 book: 唐詩三百首
 form: 五言絕句
+illustration: /assets/illustrations/poems/deng-guan-que-lou.svg
 order: 13
 lines:
 - 白日依山盡，

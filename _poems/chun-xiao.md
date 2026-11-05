@@ -4,6 +4,7 @@ author: 孟浩然
 dynasty: 唐
 book: 唐詩三百首
 form: 五言絕句
+illustration: /assets/illustrations/poems/chun-xiao.svg
 order: 9
 lines:
 - 春眠不覺曉，

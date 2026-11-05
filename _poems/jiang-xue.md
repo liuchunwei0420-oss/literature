@@ -4,6 +4,7 @@ author: 柳宗元
 dynasty: 唐
 book: 唐詩三百首
 form: 五言絕句
+illustration: /assets/illustrations/poems/jiang-xue.svg
 order: 21
 lines:
 - 千山鳥飛絕，

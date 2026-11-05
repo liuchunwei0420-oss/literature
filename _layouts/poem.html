@@ -16,6 +16,15 @@ layout: default
   </nav>
 
   <header class="poem-hero">
+    {% if page.illustration %}
+    <div class="idiom-art poem-art">
+      <img src="{{ page.illustration | relative_url }}" alt="〈{{ page.title }}〉插圖">
+      <button type="button" class="btn share-btn" data-share-card
+        data-title="{{ page.title }}" data-pinyin="〔{{ page.dynasty }}〕{{ page.author }}" data-meaning="{{ page.lines[0] }}{{ page.lines[1] }}&#10;{{ page.lines[2] }}{{ page.lines[3] }}"
+        data-slug="{{ page.url | split: '/' | last }}" data-img="{{ page.illustration | relative_url }}" data-site="{{ site.title }}"
+        data-link="{{ page.url | absolute_url | remove: 'https://' | remove: 'http://' }}">📤 下載分享卡</button>
+    </div>
+    {% endif %}
     <p class="poem-meta"><span class="label">{{ page.book }}．{{ page.form }}．第 {{ page.order }} 首</span></p>
     <h1 class="poem-title">{{ page.title }}</h1>
     <p class="poem-author">〔{{ page.dynasty }}〕{{ page.author }}</p>
@@ -66,3 +75,4 @@ layout: default
 
   <p class="muted taiyu-note">原文據開放資料庫 chinese-poetry 所收《唐詩三百首》；白話翻譯、注釋與賞析為本站整理。<a href="{{ '/shici/about/' | relative_url }}">版本說明</a></p>
 </article>
+<script src="{{ '/assets/js/share-card.js' | relative_url }}" defer></script>

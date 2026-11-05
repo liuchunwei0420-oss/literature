@@ -79,7 +79,7 @@
     ctx.fillText(d.pinyin, tx, ty + 38);
     ty += 38 + 34;
     ctx.fillStyle = C.soft; ctx.font = "400 38px " + SANS;
-    wrap(ctx, d.meaning, w - 112).slice(0, 3).forEach(function (line) { ctx.fillText(line, tx, ty + 38); ty += 58; });
+    d.meaning.split("\n").reduce(function (a, part) { return a.concat(wrap(ctx, part, w - 112)); }, []).slice(0, 3).forEach(function (line) { ctx.fillText(line, tx, ty + 38); ty += 58; });
 
     // 底部品牌列
     var by = y + h - 92;

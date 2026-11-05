@@ -4,6 +4,7 @@ author: 李商隱
 dynasty: 唐
 book: 唐詩三百首
 form: 五言絕句
+illustration: /assets/illustrations/poems/deng-le-you-yuan.svg
 order: 25
 lines:
 - 向晚意不適，

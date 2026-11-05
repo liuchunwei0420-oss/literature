@@ -4,6 +4,7 @@ author: 賈島
 dynasty: 唐
 book: 唐詩三百首
 form: 五言絕句
+illustration: /assets/illustrations/poems/xun-yin-zhe-bu-yu.svg
 order: 26
 lines:
 - 松下問童子，

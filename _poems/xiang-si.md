@@ -4,6 +4,7 @@ author: 王維
 dynasty: 唐
 book: 唐詩三百首
 form: 五言絕句
+illustration: /assets/illustrations/poems/xiang-si.svg
 order: 4
 lines:
 - 紅豆生南國，

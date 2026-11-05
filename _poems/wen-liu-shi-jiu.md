@@ -4,6 +4,7 @@ author: 白居易
 dynasty: 唐
 book: 唐詩三百首
 form: 五言絕句
+illustration: /assets/illustrations/poems/wen-liu-shi-jiu.svg
 order: 23
 lines:
 - 綠蟻新醅酒，
